@@ -1,0 +1,7 @@
+{ 
+    "aws-access": {
+        "_comment": "Change the following access and secret keys as needed. These credentials will be used to download artificats from the S3 repository and also to store application logs in S3.",
+        "aws_access_key_id": "SDAKIAJTGTIZHYQT6GVQSDF",
+        "aws_secret_access_key": "9juCJHP4osB5NXlsasadqcVofUuxrBDjyqHjw5Tg"
+    }
+}
