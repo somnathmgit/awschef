@@ -1,3 +1,4 @@
+# This is play2 metadata
 name "play2"
 maintainer "somnath"
 maintainer_email "somnathsidea@gmail.com"
