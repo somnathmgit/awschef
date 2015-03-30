@@ -3,12 +3,20 @@
 #    command "echo '#{node['aws-access']['aws_access_key_id']}' >> /home/ec2-user/test.txt"
 #end	
 
-package "httpd" do
-   action :install
-   version "#{node['apache']['version']}"
+package 'httpd'
+
+service 'httpd' do
+  action [:enable, :start]
 end
 
-service "httpd" do
-  supports :restart => true, :reload => true
-  action :enable
+file '/var/www/html/index.html' do
+  content '<html>
+  <body>
+    <h1>hello world</h1>
+  </body>
+</html>'
+end
+
+service 'iptables' do
+  action :stop
 end
