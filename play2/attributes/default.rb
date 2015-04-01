@@ -3,4 +3,4 @@
 # Cookbook Name:: Play2
 # Attributes:: default
 
-default['apache']['version']="2.2"
+default['index_page']['name']="index.html"
