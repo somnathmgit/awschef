@@ -11,7 +11,7 @@ service 'httpd' do
   action [:enable, :start]
 end
 
-file "/var/www/html/#{node['index_page']['name']" do
+file "/var/www/html/#{node['index_page']['name']}" do
   content '<html>
   <body>
     <h1>hello world</h1>
