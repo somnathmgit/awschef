@@ -12,13 +12,9 @@ service 'httpd' do
 end
 
 file "/var/www/html/#{node['index_page']['name']}" do
-  content '<html>
+  content "<html>
   <body>
-    <h1>hello world</h1>
+    <h1>#{node['welcome']['message']}</h1>
   </body>
-</html>'
+</html>"
 end
-
-#service 'iptables' do
-#  action :stop
-#end
