@@ -3,7 +3,9 @@
 #    command "echo '#{node['aws-access']['aws_access_key_id']}' >> /home/ec2-user/test.txt"
 #end	
 
-package 'httpd'
+package 'httpd' do
+  action :install
+end
 
 service 'httpd' do
   action [:enable, :start]
@@ -17,6 +19,6 @@ file '/var/www/html/index.html' do
 </html>'
 end
 
-service 'iptables' do
-  action :stop
-end
+#service 'iptables' do
+#  action :stop
+#end
