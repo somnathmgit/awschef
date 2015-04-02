@@ -1,6 +1,6 @@
 #
 # Author:: somnath
-# Cookbook Name:: Play2
+# Cookbook Name:: apache
 # Attributes:: default
 
 default['index_page']['name']="index.html"
