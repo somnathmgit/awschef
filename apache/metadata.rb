@@ -1,3 +1,3 @@
 # This is apache metadata
-name "play2"
+name "apache"
 version "1.0"
