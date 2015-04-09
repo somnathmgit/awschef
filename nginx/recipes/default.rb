@@ -6,7 +6,7 @@ service 'nginx' do
   action [:enable, :start]
 end
 
-file "/var/www/nginx-default/#{node['index_page']['name']}" do
+file "/usr/nginx/html/#{node['index_page']['name']}" do
   content "<html>
   <body>
     <h1>#{node['welcome']['message']}</h1>
