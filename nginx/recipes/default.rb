@@ -13,11 +13,3 @@ file "/usr/share/nginx/html/#{node['index_page']['name']}" do
   </body>
 </html>"
 end
-
-package "sun-java6-jdk" do
-  response_file "java.seed"
-end
-
-package "tomcat7" do
-  action :install
-end
