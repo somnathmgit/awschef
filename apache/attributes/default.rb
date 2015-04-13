@@ -4,4 +4,4 @@
 # Attributes:: default
 
 default['index_page']['name']="index.html"
-default['welcome']['message']="Welcome to apache webserver."
+default['welcome']['message']="Welcome to apache webserver 2nd time."
