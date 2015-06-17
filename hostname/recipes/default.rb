@@ -7,7 +7,7 @@ if node['ec2'].nill?
    hostname ${NODE_NAME}
    echo ${LOCAL_IP}  ${NODE_NAME} >> /etc/hosts
    EOH 
-end   
+  end   
 else
    bash "set_hostname" do
    #interpreter "bash"
@@ -17,4 +17,5 @@ else
    hostname ${NODE_NAME}
    echo ${LOCAL_IP}  ${NODE_NAME} >> /etc/hosts
    EOH
-end	
+  end	
+end  
