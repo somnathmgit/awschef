@@ -1,7 +1,9 @@
 if node['ec2'].nil?
     bash "set_hostname" do
        #interpreter "bash"
+       user 'root'
        code <<-EOH
+         touch /home/ec2-user/test.txt
          NODE_NAME=node['hostname']
          LOCAL_IP=`ifconfig eth0 |grep inet |awk '{print $2}' |cut -d":" -f2 |grep -v "^$"`
          hostname ${NODE_NAME}
@@ -12,6 +14,7 @@ else
      bash "set_hostname" do
        #interpreter "bash"
        code <<-EOH
+         touch /home/ec2-user/test.txt
          NODE_NAME=$(curl -s http://169.254.169.254/latest/meta-data/instance-id | cut -d- -f2)
          LOCAL_IP=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
          hostname ${NODE_NAME}
