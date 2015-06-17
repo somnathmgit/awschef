@@ -36,6 +36,6 @@ if node['ec2'].nil?
 else 
     execute "set_hostname" do
         #command "touch /home/ec2-user/testec2.txt;LOCAL_IP=node['hostname']; NODE_NAME=node['ipaddress'];echo node['hostname'] node['ipaddress'] >> /home/ec2-user/testec2.txt"
-        command "touch /home/ec2-user/testec2.txt;LOCAL_IP=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4); echo ${LOCAL_IP} >> /home/ec2-user/testec2.txt"
+        command "touch /home/ec2-user/testec2.txt;LOCAL_IP=`ifconfig eth0 |grep inet |awk '{print $2}' |cut -d":" -f2 |grep -v "^$"`; echo ${LOCAL_IP} >> /home/ec2-user/testec2.txt"
     end 
 end    
