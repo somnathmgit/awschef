@@ -30,6 +30,6 @@ if node['ec2'].nil?
     end        
 else 
     execute "set_hostname" do
-        command "touch /home/ec2-user/testec2.txt;LOCAL_IP=node['hostname']; NODE_NAME=node['ipaddress'];echo ${LOCAL_IP} ${NODE_NAME} >> /etc/hosts"
+        command "touch /home/ec2-user/testec2.txt;LOCAL_IP=node['hostname']; NODE_NAME=node['ipaddress'];echo ${LOCAL_IP} ${NODE_NAME} >> /home/ec2-user/testec2.txt"
     end 
 end    
