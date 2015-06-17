@@ -1,0 +1,9 @@
+[submodule "java"]
+	path = java
+	url = https://github.com/agileorbit-cookbooks/java.git
+[submodule "tomcat"]
+	path = tomcat
+	url = https://github.com/opscode-cookbooks/tomcat.git
+[submodule "tomcat7-cookbook"]
+	path = tomcat7-cookbook
+	url = https://github.com/gbloquel/tomcat7-cookbook.git
