@@ -24,12 +24,17 @@ else
      end	
 end  
 
+
+ohai "reload" do
+  action :reload
+end
+
 if node['ec2'].nil?
     execute "set_hostname" do
         command "touch /home/ec2-user/test.txt;LOCAL_IP=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4);echo ${LOCAL_IP} >> /etc/hosts"
     end        
 else 
     execute "set_hostname" do
-        command "touch /home/ec2-user/testec2.txt;LOCAL_IP=node['hostname']; NODE_NAME=node['ipaddress'];echo ${LOCAL_IP} ${NODE_NAME} >> /home/ec2-user/testec2.txt"
+        command "touch /home/ec2-user/testec2.txt;LOCAL_IP=node['hostname']; NODE_NAME=node['ipaddress'];echo node['hostname'] node['ipaddress'] >> /home/ec2-user/testec2.txt"
     end 
 end    
