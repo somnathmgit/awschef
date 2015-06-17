@@ -12,13 +12,14 @@ if node['ec2'].nil?
     end 
 else
      bash "set_hostname" do
+        user 'root'
        #interpreter "bash"
-       code <<-EOH
+        code <<-EOH
          touch /home/ec2-user/test.txt
          NODE_NAME=$(curl -s http://169.254.169.254/latest/meta-data/instance-id | cut -d- -f2)
          LOCAL_IP=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
          hostname ${NODE_NAME}
          echo ${LOCAL_IP}  ${NODE_NAME} >> /etc/hosts
-       EOH
+        EOH
      end	
 end  
