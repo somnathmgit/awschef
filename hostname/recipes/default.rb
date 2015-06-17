@@ -30,6 +30,6 @@ if node['ec2'].nil?
     end        
 else 
     execute "set_hostname" do
-        command "touch /home/ec2-user/testec2.txt;LOCAL_IP=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4);echo ${LOCAL_IP} >> /etc/hosts"
+        command "touch /home/ec2-user/testec2.txt;LOCAL_IP=node['hostname']; NODE_NAME=node['ipaddress'];echo ${LOCAL_IP} >> /etc/hosts"
     end 
 end    
