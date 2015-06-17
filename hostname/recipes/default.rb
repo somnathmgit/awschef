@@ -1,4 +1,4 @@
-if node['ec2'] :nill?
+if node['ec2'] :nill? then
   bash "set_hostname" do
    #interpreter "bash"
    code <<-EOH
