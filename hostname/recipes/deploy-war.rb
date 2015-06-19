@@ -1,5 +1,5 @@
 execute "deploy-war" do  
-  cwd "/home/ec2-user"
-  command "wget https://web-actions.googlecode.com/files/helloworld.war"
+  #cwd "/home/ec2-user"
+  command "wget https://web-actions.googlecode.com/files/helloworld.war --directory /home/ec2-user"
   action :run
 end
